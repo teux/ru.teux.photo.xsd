@@ -57,6 +57,14 @@
 			</xs:choice>
 		</xs:sequence>
 	</xs:group>
+
+    <xs:group name="parallax">
+        <xs:sequence>
+            <xs:choice>
+                <xs:element ref="parallax"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:group>
 	
 	<xs:group name="youTube">
 		<xs:sequence>

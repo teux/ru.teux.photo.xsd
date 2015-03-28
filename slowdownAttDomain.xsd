@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+						elementFormDefault="qualified"
+						attributeFormDefault="unqualified"
+						xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+
+	<xs:attributeGroup name="slowdownAtt-d-attribute">
+		<xs:attribute name="slowdown" type="slowdown-atts.class" default="false"/>
+	</xs:attributeGroup>
+	
+	<xs:simpleType name="slowdown-atts.class">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="false"/>
+			<xs:enumeration value="true"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+</xs:schema>

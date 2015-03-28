@@ -203,6 +203,7 @@
 				<xs:group ref="floatFig"/>
 				<xs:group ref="everyTrail"/>
 				<xs:group ref="umap"/>
+				<xs:group ref="parallax"/>
 				<xs:group ref="youTube"/>
 				<xs:group ref="clearFloat"/>
 			</xs:choice>
@@ -249,7 +250,29 @@
 			<xs:group ref="text" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
-	
+
+    <!--parallax-->
+    <xs:element name="parallax">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="parallax.class">
+                    <xs:attribute ref="class" default="- topic/foreign photoFile/parallax "/>
+                    <xs:attribute name="href" use="required"/>
+                    <xs:attributeGroup ref="slowdownAtt-d-attribute"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="parallax.class">
+        <xs:sequence>
+            <xs:group ref="shortdesc" minOccurs="0"/>
+            <xs:group ref="title" minOccurs="1"/>
+            <xs:group ref="note" minOccurs="0"/>
+            <xs:group ref="image"/>
+        </xs:sequence>
+    </xs:complexType>
+
 	<!--youTube-->
 	<xs:element name="youTube">
 		<xs:complexType mixed="true">
