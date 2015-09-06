@@ -26,6 +26,7 @@
 	<xs:include schemaLocation="urn:teux:names:specialization:dita:xsd:floatAttDomain.xsd"/>
 	<xs:include schemaLocation="urn:teux:names:specialization:dita:xsd:phsizeAttDomain.xsd"/>
 	<xs:include schemaLocation="urn:teux:names:specialization:dita:xsd:slowdownAttDomain.xsd"/>
+	<xs:include schemaLocation="urn:teux:names:specialization:dita:xsd:heightAttDomain.xsd"/>
 
   <!--  ===================== GROUP DEFINITION =====================  -->
   <xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:metaDeclGrp.xsd:1.2"/>
