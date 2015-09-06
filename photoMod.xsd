@@ -259,6 +259,7 @@
                     <xs:attribute ref="class" default="- topic/foreign photoFile/parallax "/>
                     <xs:attribute name="href" use="required"/>
                     <xs:attributeGroup ref="slowdownAtt-d-attribute"/>
+                    <xs:attributeGroup ref="heightAtt-d-attribute"/>
                 </xs:extension>
             </xs:complexContent>
         </xs:complexType>
