@@ -17,7 +17,7 @@
 			</xs:choice>
 		</xs:sequence>
 	</xs:group>
-  
+
 	<xs:group name="photoSection">
 		<xs:sequence>
 			<xs:choice>
@@ -33,7 +33,7 @@
 			</xs:choice>
 		</xs:sequence>
 	</xs:group>
-	
+
 	<xs:group name="storySection">
 		<xs:sequence>
 			<xs:choice>
@@ -41,7 +41,7 @@
 			</xs:choice>
 		</xs:sequence>
 	</xs:group>
-	
+
 	<xs:group name="everyTrail">
 		<xs:sequence>
 			<xs:choice>
@@ -65,7 +65,7 @@
             </xs:choice>
         </xs:sequence>
     </xs:group>
-	
+
 	<xs:group name="youTube">
 		<xs:sequence>
 			<xs:choice>
@@ -73,7 +73,15 @@
 			</xs:choice>
 		</xs:sequence>
 	</xs:group>
-	
+
+	<xs:group name="vimeo">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element ref="vimeo"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:group>
+
 	<xs:group name="floatFig">
 		<xs:sequence>
 			<xs:choice>
@@ -81,7 +89,7 @@
 			</xs:choice>
 		</xs:sequence>
 	</xs:group>
-	
+
 	<xs:group name="clearFloat">
 		<xs:sequence>
 			<xs:choice>
@@ -89,5 +97,5 @@
 			</xs:choice>
 		</xs:sequence>
 	</xs:group>
-	
+
 </xs:schema>

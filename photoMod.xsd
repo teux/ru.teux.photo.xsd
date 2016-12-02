@@ -3,12 +3,12 @@
 <xs:schema	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 						xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
 						elementFormDefault="qualified" attributeFormDefault="unqualified">
-						
+
 	<!-- ==================== Import Section ======================= -->
 	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="urn:oasis:names:tc:dita:xsd:xml.xsd:1.2"/>
 	<xs:import namespace="http://dita.oasis-open.org/architecture/2005/" schemaLocation="urn:oasis:names:tc:dita:xsd:ditaarch.xsd:1.2"/>
 
-	
+
 	<!-- Domain declaration  -->
    <xs:annotation>
     <xs:appinfo>
@@ -16,7 +16,7 @@
     </xs:appinfo>
   </xs:annotation>
 
-  
+
   <!-- Info types -->
   <xs:group name="photoFile-info-types">
     <xs:choice>
@@ -53,8 +53,8 @@
 			<xs:group ref="general.blocks"/>
 		</xs:choice>
 	</xs:group>
-	
-	
+
+
   <!-- photoFile -->
 	<xs:element name="photoFile">
     <xs:complexType>
@@ -65,7 +65,7 @@
       </xs:complexContent>
     </xs:complexType>
   </xs:element>
- 
+
 	<xs:complexType name="photoFile.class">
 		<xs:sequence>
 			<xs:group ref="photoFile.content"/>
@@ -96,7 +96,7 @@
       </xs:complexContent>
     </xs:complexType>
   </xs:element>
-  
+
 	<xs:complexType name="photoBody.class">
 		<xs:sequence>
 			<xs:group ref="photoBody.content"/>
@@ -128,14 +128,14 @@
 			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
-	
+
 	<xs:complexType name="photoSection.class">
 		<xs:sequence>
 			<xs:group ref="photoSection.content"/>
 		</xs:sequence>
 		<xs:attributeGroup ref="section.attributes"/>
 	</xs:complexType>
-	
+
 	<xs:group name="photoSection.content">
 		<xs:sequence>
 			<xs:group ref="title" minOccurs="0"/>
@@ -146,8 +146,8 @@
 			</xs:choice>
 		</xs:sequence>
 	</xs:group>
-	
-	
+
+
 	<!--expandSection-->
 	<xs:element name="expandSection">
 		<xs:complexType>
@@ -158,14 +158,14 @@
 			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
-	
+
 	<xs:complexType name="expandSection.class">
 		<xs:sequence>
 			<xs:group ref="expandSection.content"/>
 		</xs:sequence>
 		<xs:attributeGroup ref="section.attributes"/>
 	</xs:complexType>
-	
+
 	<xs:group name="expandSection.content">
 		<xs:sequence>
 			<xs:group ref="title" minOccurs="0"/>
@@ -175,8 +175,8 @@
 			</xs:choice>
 		</xs:sequence>
 	</xs:group>
-	
-	
+
+
 	<!--storySection-->
 	<xs:element name="storySection">
 		<xs:complexType>
@@ -187,14 +187,14 @@
 			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
-	
+
 	<xs:complexType name="storySection.class">
 		<xs:sequence>
 			<xs:group ref="storySection.content"/>
 		</xs:sequence>
 		<xs:attributeGroup ref="section.attributes"/>
 	</xs:complexType>
-	
+
 	<xs:group name="storySection.content">
 		<xs:sequence>
 			<xs:group ref="title" minOccurs="0"/>
@@ -205,12 +205,13 @@
 				<xs:group ref="umap"/>
 				<xs:group ref="parallax"/>
 				<xs:group ref="youTube"/>
+				<xs:group ref="vimeo"/>
 				<xs:group ref="clearFloat"/>
 			</xs:choice>
 		</xs:sequence>
 	</xs:group>
 
-	
+
 	<!--everyTrail-->
 	<xs:element name="everyTrail">
 		<xs:complexType mixed="true">
@@ -224,13 +225,13 @@
 			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
-	
+
 	<xs:complexType name="everyTrail.class" mixed="true">
 		<xs:sequence>
 			<xs:group ref="text" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
-	
+
 	<!--umap-->
 	<xs:element name="umap">
 		<xs:complexType mixed="true">
@@ -244,7 +245,7 @@
 			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
-	
+
 	<xs:complexType name="umap.class" mixed="true">
 		<xs:sequence>
 			<xs:group ref="text" minOccurs="0"/>
@@ -287,13 +288,33 @@
 			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
-	
+
 	<xs:complexType name="youTube.class" mixed="true">
 		<xs:sequence>
 			<xs:group ref="text" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
-	
+
+	<!--vimeo-->
+	<xs:element name="vimeo">
+		<xs:complexType mixed="true">
+			<xs:complexContent>
+				<xs:extension base="vimeo.class">
+					<xs:attribute ref="class" default="- topic/foreign photoFile/vimeo "/>
+					<xs:attribute name="width" default="746"/>
+					<xs:attribute name="height" default="420"/>
+					<xs:attribute name="href" use="required"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="vimeo.class" mixed="true">
+		<xs:sequence>
+			<xs:group ref="text" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
 	<!--floatFig-->
 	<xs:element name="floatFig">
 		<xs:complexType>
@@ -306,21 +327,21 @@
 			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
-	
+
 	<xs:complexType name="floatFig.class">
 		<xs:sequence>
 			<xs:group ref="floatFig.content"/>
 		</xs:sequence>
 		<xs:attributeGroup ref="fig.attributes"/>
 	</xs:complexType>
-	
+
 	<xs:group name="floatFig.content">
 		<xs:sequence>
 			<xs:group ref="title" minOccurs="0"/>
 			<xs:group ref="image"/>
 		</xs:sequence>
 	</xs:group>
-	
+
 	<!--floatFig-->
 	<xs:element name="clearFloat">
 		<xs:complexType>
@@ -331,9 +352,9 @@
 			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
-	
+
 	<xs:complexType name="clearFloat.class">
 		<xs:sequence/>
 	</xs:complexType>
-	
+
 </xs:schema>
